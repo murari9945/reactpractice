@@ -3,12 +3,26 @@ import './App.css';
 import ExpenseItem from './components/ExpenseItem';
 
 function App() {
+  const expenses = [
+    { name: 'Food', price: '120', location: 'Hyderabad' },
+    { name: 'Transportation', price: '50', location: 'New York' },
+    { name: 'Entertainment', price: '80', location: 'London' },
+    // Add more expenses here...
+  ];
+
   return (
     <div>
     <h1>lets get started here</h1>
     
-    
-    <ExpenseItem></ExpenseItem>
+
+    {expenses.map((expense, index) => (
+        <ExpenseItem
+          key={index}
+          name={expense.name}
+          price={expense.price}
+          location={expense.location}
+        />
+      ))}
     </div>
   );
 }
