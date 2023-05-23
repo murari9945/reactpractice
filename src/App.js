@@ -7,7 +7,12 @@ function App() {
     { name: 'Food', price: '120', location: 'Hyderabad' },
     { name: 'Transportation', price: '50', location: 'New York' },
     { name: 'Entertainment', price: '80', location: 'London' },
-    // Add more expenses here...
+    { name: 'Entertainment', price: '80', location: 'London' },
+    { name: 'Entertainment', price: '80', location: 'London' },
+    { name: 'Entertainment', price: '80', location: 'London' },
+    { name: 'Entertainment', price: '80', location: 'London' },
+    { name: 'Entertainment', price: '80', location: 'London' },
+    
   ];
 
   return (
