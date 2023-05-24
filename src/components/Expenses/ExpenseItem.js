@@ -3,6 +3,7 @@ import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate.js';
 
 import ExpenseDetails from './ExpenseDetails.js';
+import Card from '../UI/Card';
 
 const ExpenseItem=(props)=>{
     const[title,setTitle]=useState(props.name);
@@ -24,8 +25,10 @@ const ExpenseItem=(props)=>{
    
     return(
         <div className='expense-item'>
+          
           <ExpenseDate date={props.date} />
-        <ExpenseDetails price={expense}  location={props.location}   name={title} ></ExpenseDetails>
+          <div>
+        <ExpenseDetails price={expense}  location={props.location}   name={title} ></ExpenseDetails></div>
         <button onClick={clickHandler}>change Title</button>
         <button onClick={updateExpense}>Change Expense</button>
         <button onClick={deleteExpenseHandler}>Delete Expense</button>

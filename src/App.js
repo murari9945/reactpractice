@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
+import ExpenseItem from './components/Expenses/ExpenseItem';
+import Card from './components/UI/Card';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App=()=> {
   const expenses = [
@@ -16,8 +18,8 @@ const App=()=> {
   ];
 
   return (
-    <div>
-    <h1>lets get started here</h1>
+    <Card>
+    <NewExpense/>
     
 
     {expenses.map((expense, index) => (
@@ -29,7 +31,7 @@ const App=()=> {
           date={expense.date}
         />
       ))}
-    </div>
+    </Card>
   );
 }
 
