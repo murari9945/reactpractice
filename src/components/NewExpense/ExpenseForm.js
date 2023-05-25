@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './ExpenseForm.css';
-const ExpenseForm=()=>{
+const ExpenseForm=(props)=>{
     const[givenName,setGivenName]=useState('');
     const[givenAmount,setGivenAmount]=useState('');
     const[givenDate,setGivenDate]=useState('');
@@ -34,7 +34,7 @@ const ExpenseForm=()=>{
           location: givenLocation,
         };
     
-        console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
     
         // Reset the form fields
         setGivenName('');
@@ -47,19 +47,19 @@ const ExpenseForm=()=>{
         <div className='new-expense'>
             <div className='new-expense__control'>
                 <label>name</label>
-                <input type="text" onChange={nameChangerHandler}/>
+                <input type="text" value={givenName} onChange={nameChangerHandler}/>
             </div>
             <div className='new-expense__control'>
                 <label>price</label>
-                <input type="number" onChange={amountChangeHandler}/>
+                <input type="number" value={givenAmount} onChange={amountChangeHandler}/>
             </div>
             <div className='new-expense__control'>
                 <label>location</label>
-                <input type="text"onChange={locationChangeHandler}/>
+                <input type="text" value={givenLocation}onChange={locationChangeHandler}/>
             </div>
             <div className='new-expense__control'>
                 <label>date</label>
-                <input type="date" onChange={dateChangeHandler}/>
+                <input type="date" value={givenDate} onChange={dateChangeHandler}/>
             </div>
             <div>
                 <button type="submit" onClick={submitHandler}>add expenses</button>
