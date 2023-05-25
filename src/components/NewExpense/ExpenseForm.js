@@ -23,6 +23,26 @@ const ExpenseForm=()=>{
         setGivenLocation(event.target.value);
 
     };
+    const submitHandler = (event) => {
+        event.preventDefault(); 
+    
+        
+        const expenseData = {
+          name: givenName,
+          amount: givenAmount,
+          date: givenDate,
+          location: givenLocation,
+        };
+    
+        console.log(expenseData);
+    
+        // Reset the form fields
+        setGivenName('');
+        setGivenAmount('');
+        setGivenDate('');
+        setGivenLocation('');
+      };
+    
     return <form>
         <div className='new-expense'>
             <div className='new-expense__control'>
@@ -42,7 +62,7 @@ const ExpenseForm=()=>{
                 <input type="date" onChange={dateChangeHandler}/>
             </div>
             <div>
-                <button type="submit">add expenses</button>
+                <button type="submit" onClick={submitHandler}>add expenses</button>
             </div>
         </div>
     </form>
