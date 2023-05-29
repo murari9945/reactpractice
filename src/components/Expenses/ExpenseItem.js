@@ -28,7 +28,7 @@ const ExpenseItem=(props)=>{
           
           <ExpenseDate date={props.date} />
           <div>
-        <ExpenseDetails price={expense}  location={props.location}   name={title} ></ExpenseDetails></div>
+        <ExpenseDetails price={expense}  location={location}   name={title} ></ExpenseDetails></div>
         <button onClick={clickHandler}>change Title</button>
         <button onClick={updateExpense}>Change Expense</button>
         <button onClick={deleteExpenseHandler}>Delete Expense</button> 

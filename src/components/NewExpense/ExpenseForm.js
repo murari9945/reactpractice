@@ -33,8 +33,8 @@ const ExpenseForm=(props)=>{
         
         const expenseData = {
           name: givenName,
-          amount: givenAmount,
-          date: givenDate,
+          price: givenAmount,
+          date: new Date(givenDate),
           location: givenLocation,
         };
     
@@ -47,7 +47,7 @@ const ExpenseForm=(props)=>{
         setGivenLocation('');
       };
     
-    return <form>
+    return (<form onSubmit={submitHandler}>
         <div className='new-expense'>
             <div className='new-expense__control'>
                 <label>name</label>
@@ -66,10 +66,10 @@ const ExpenseForm=(props)=>{
                 <input type="date" value={givenDate} onChange={dateChangeHandler}/>
             </div>
             <div>
-                <button type="submit" onClick={submitHandler}>add expenses</button>
+                <button type="submit" >add expenses</button>
             </div>
         </div>
-    </form>
+    </form>);
 
 }
 export default ExpenseForm;
