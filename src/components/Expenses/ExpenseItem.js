@@ -24,17 +24,17 @@ const ExpenseItem=(props)=>{
     const { name, price, location } = props;
    
     return(
-        <div className='expense-item'>
+        <Card className='expense-item'>
           
           <ExpenseDate date={props.date} />
           <div>
         <ExpenseDetails price={expense}  location={props.location}   name={title} ></ExpenseDetails></div>
         <button onClick={clickHandler}>change Title</button>
         <button onClick={updateExpense}>Change Expense</button>
-        <button onClick={deleteExpenseHandler}>Delete Expense</button>
+        <button onClick={deleteExpenseHandler}>Delete Expense</button> 
        
        
-        </div>
+        </Card>
     ) ;
 }
 export default ExpenseItem;

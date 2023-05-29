@@ -11,13 +11,17 @@ const ExpenseForm=(props)=>{
 
     const nameChangerHandler=(event)=>{
         setGivenName(event.target.value);
+       // console.log(event.target.value);
     };
     const amountChangeHandler=(event)=>{
         setGivenAmount(event.target.value);
+        //console.log(event.target.value);
+
 
     };
     const dateChangeHandler=(event)=>{
         setGivenDate(event.target.value);
+        //console.log(event.target.value);
     };
     const locationChangeHandler=(event)=>{
         setGivenLocation(event.target.value);

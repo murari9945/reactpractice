@@ -4,6 +4,7 @@ import './App.css';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/UI/Card';
 import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
 
 const App=()=> {
   const [expenses,setExpenses] =useState([
@@ -21,12 +22,13 @@ const App=()=> {
    // console.log('in app.js');
    // console.log(expenses);
   //}
-  const addExpenseHandler = (expenseData) => {
-    setExpenses((prevExpenses) => [expenseData, ...prevExpenses]);
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
   };
-
   return (
-    <Card>
+   /* <Card>
     <NewExpense onAddExpense={addExpenseHandler}/>
     
 
@@ -39,7 +41,11 @@ const App=()=> {
           date={expense.date}
         />
       ))}
-    </Card>
+    </Card> */
+    <div>
+    <NewExpense onAddExpense={addExpenseHandler} />
+    <Expenses items={expenses} />
+  </div>
   );
 }
 
